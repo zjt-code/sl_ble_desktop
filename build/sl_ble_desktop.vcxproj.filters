@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\connectthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\Adapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\Peripheral.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\Exceptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\AdapterBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\PeripheralBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\AdapterSafe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\PeripheralSafe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows\AdapterBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows\PeripheralBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\connectthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\include_Debug\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\include_Release\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\include_MinSizeRel\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\include_RelWithDebInfo\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\CMakeFiles\537b7b0d24eeaaef93c35d9c5c57caa7\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\mainwindow.ui" />
+    <None Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\autouic_Debug.stamp" />
+    <None Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\autouic_Release.stamp" />
+    <None Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{25AFCE36-F5EF-3A50-AAF2-7F84C5177812}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C1F430D5-5166-3DF6-A46D-2045286C24D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{96B9DA58-276B-3D52-B34F-8250918455A4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
