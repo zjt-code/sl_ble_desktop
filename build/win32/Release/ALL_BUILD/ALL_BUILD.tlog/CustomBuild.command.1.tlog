@@ -1,0 +1,10 @@
+^E:\QT_PROG\SL_BLE_DESKTOP\SL_BLE_DESKTOP\CMAKELISTS.TXT
+setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/QT_PROG/sl_ble_desktop/sl_ble_desktop -BE:/QT_PROG/sl_ble_desktop/sl_ble_desktop/build --check-stamp-file E:/QT_PROG/sl_ble_desktop/sl_ble_desktop/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

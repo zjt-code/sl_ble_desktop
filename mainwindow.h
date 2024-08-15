@@ -12,6 +12,10 @@
 
 #include <QtCore/QTimer>
 
+#include "mythread.hpp"
+#include<OpenXLSX.hpp>
+
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -62,6 +66,12 @@ private:
     QLineSeries *series_cv ;
     QValueAxis *m_cv_axisX;
     QValueAxis *m_cv_axisY; 
+
+
+    my_Thread pMyThread;
+
+    OpenXLSX::XLDocument *pDoc;
+    
 
 };
 #endif // MAINWINDOW_H

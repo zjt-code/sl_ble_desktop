@@ -1,0 +1,10 @@
+^E:\QT_PROG\SL_BLE_DESKTOP\SL_BLE_DESKTOP\BUILD\CMAKEFILES\A1C5FB9B55BB0739D0B2C6B0932CF403\GENERATE.STAMP.RULE
+setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/QT_PROG/sl_ble_desktop/sl_ble_desktop -BE:/QT_PROG/sl_ble_desktop/sl_ble_desktop/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/QT_PROG/sl_ble_desktop/sl_ble_desktop/build/sl_ble_desktop.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

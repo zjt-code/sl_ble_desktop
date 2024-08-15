@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\OpenXLSX;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\OpenXLSX;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\OpenXLSX;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
     <Midl>
-      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\include;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\simpleble;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\common;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\backends\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\external;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\builders;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\windows;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src;E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\OpenXLSX;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

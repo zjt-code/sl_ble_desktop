@@ -5,8 +5,12 @@
 #include "simpleble/SimpleBLE.h"
 
 #include "user_service.h"
+#include "mythread.hpp"
 
 #include<iostream>
+#include<string>
+#include <iomanip>
+#include <sstream>
 
 // User fACE layout
 #include<QVBoxLayout>
@@ -24,6 +28,11 @@
 
 
 #include<QPushButton>
+#include<OpenXLSX.hpp>
+
+#include<QDateTime>
+#include<QTime>
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -42,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_cv_axisY(new QValueAxis)
     , myTableView(new QTableView)
     , data_table(new QStandardItemModel)
+   , pDoc(new OpenXLSX::XLDocument)
 {
 
 
@@ -50,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent)
     // add singal and slot    
     QObject::connect(&m_timer, &QTimer::timeout, this, &MainWindow::handleTimeout);
     m_timer.setInterval(100);
-   //m_timer.start();
+  // m_timer.start();
 
     QObject::connect(&m_timer_cv,&QTimer::timeout,this,&MainWindow::handleTimeout_cv);
     m_timer_cv.setInterval(50);
@@ -61,6 +71,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     // p_connect = new ConnectThread(this); 
     std::cout<<" Mainwindow construct"<<std::endl;
+
+   // pMyThread.start();
 
     // interface layout
 
@@ -123,10 +135,10 @@ MainWindow::MainWindow(QWidget *parent)
     ChartCurrent->legend()->hide();
     ChartCurrent->setTitle("Measurement Diff Voltage");
     ChartCurrent->setTitleBrush(QBrush(QColor(255,0,0)));
-    ChartCurrent->setBackgroundBrush(QBrush(QColor(54,54,54)));
+    ChartCurrent->setBackgroundBrush(QBrush(QColor(255,255,255)));
 
     ChartCurrentView->setChart(ChartCurrent);
-    ChartCurrentView->setBackgroundBrush(QBrush(QColor(54,54,54)));   
+    ChartCurrentView->setBackgroundBrush(QBrush(QColor(255,255,255)));   
 
 
     // add cv chart
@@ -150,10 +162,10 @@ MainWindow::MainWindow(QWidget *parent)
     ChartCV->setTitle("CV(100 value)");
     ChartCV->setTitleBrush(QBrush(QColor(255,0,0)));
 
-    ChartCV->setBackgroundBrush(QBrush(QColor(54,54,54)));
+    ChartCV->setBackgroundBrush(QBrush(QColor(255,255,255)));
 
     ChartCVView->setChart(ChartCV);
-    ChartCVView->setBackgroundBrush(QBrush(QColor(54,54,54)));
+    ChartCVView->setBackgroundBrush(QBrush(QColor(255,255,255)));
 
 
     //ChartCurrent->addSeries(series_cv);
@@ -194,6 +206,29 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(MainWidget);
 
+
+    std::string path="nxj_evb_test.xlsx";
+    try
+    {
+        pDoc->create(path); 
+
+        auto wks_cur = pDoc->workbook().worksheet("Sheet1");
+
+        wks_cur.cell("A1").value() = "Index";
+        wks_cur.cell("B1").value() = "Current(nA)";
+        wks_cur.cell("C1").value() = "Time";
+
+        pDoc->save();     // std::cout<<"current row -->"<<wks_cur.rowCount()<<std::endl;        
+        pDoc->close();
+    }catch(...)
+    {
+     
+       std::cout<<"exception create path"<<std::endl;
+    }
+
+    std::cout<<QTime::currentTime().toString().toStdString()<<std::endl;
+
+ 
 }
 
 
@@ -297,8 +332,8 @@ void MainWindow::on_pushButton_clicked()
             peripherals.push_back(peripheral);
             
             
-
-            if(peripheral.identifier().compare("Blinky Example")==0)
+            // the device name conneted
+            if(peripheral.identifier().compare("Empty Example")==0)
             {
                 std::cout<<"Found "<< peripheral.identifier()<<"  stop scan"<<std::endl;
 
@@ -320,14 +355,24 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_bt_connect_clicked()
 {
 
-        //connecting
+    //connecting
     p_connect->peripheral_connected = peripheral_connected;
 
     std::cout<<"connecting -----"<<std::endl;
 
-    p_connect->start();  
+    std::cout<< p_connect<<std::endl;
+
+    p_connect->start();
+
+   // p_connect->cgms_test();  
+
+   // pMyThread->start();
+
+
 
 }
+
+
 
 static int data_i_row = 0;
 std::vector<float> cur_data_arr{0};
@@ -343,7 +388,7 @@ void MainWindow::measure_data_slot(float x)
     // QTableWidgetItem *cur_item = new QTableWidgetItem("abcef");
 
     
-        QStandardItem    *cur_item = new QStandardItem(QString::number(x));
+        QStandardItem *cur_item = new QStandardItem(QString::number(x));
 
         cur_item->setTextAlignment(Qt::AlignCenter);
         //cur_item->setEditable(false);
@@ -351,8 +396,7 @@ void MainWindow::measure_data_slot(float x)
         cur_item->setTextAlignment(Qt::AlignCenter);
         cur_item->setEditable(false);
         data_table->setRowCount(data_i_row+1);
-        data_table->setItem(++data_i_row,0,cur_item); 
-
+        data_table->setItem(data_i_row++,0,cur_item); 
         myTableView->scrollToBottom(); 
 
         // update buffer
@@ -386,11 +430,45 @@ void MainWindow::measure_data_slot(float x)
     m_current_axisX->setRange(0,data_i_row);
 
         // ChartCurrent->scroll(1,0);
-
         // ChartCurrentView->resetCachedContent();
-
         //ChartCurrent->addSeries(series_current);
-
         // ChartCurrent->createDefaultAxes();
+
+
+    /****************save data to excel***************** */ 
+    std::string path="nxj_evb_test.xlsx";
+    try
+    {
+        pDoc->open(path);
+        std::cout<< pDoc->isOpen()<<std::endl;;
+        //pDoc->
+
+        std::cout<<"write data to " << path<< std::endl;
+        //pDoc->open(path);
+         auto wks_cur = pDoc->workbook().worksheet("Sheet1");
+         int cur_row = wks_cur.rowCount();
+         std::string a_row_cnt = "A" + std::to_string(cur_row +1);
+         std::string b_row_cnt = "B" + std::to_string(cur_row +1);
+         std::string c_row_cnt = "C" + std::to_string(cur_row + 1);
+         wks_cur.cell(a_row_cnt).value() = cur_row;
+         wks_cur.cell(b_row_cnt).value() = x;        
+
+        //  std::string str_datetime = QDateTime::date()
+        //  std::cout<< str_datetime <<std::endl;
+
+        //  wks_cur.cell(c_row_cnt).value() = str_datetime.c_str();
+         pDoc->save();
+         pDoc->close();
+
+
+
+    }catch(...)
+    {
+
+        std::cout<<"Open dataFile Fail"<<std::endl;
+
+    }
+
+    /******************************************************* */
         
 }

@@ -54,8 +54,10 @@ ConnectThread *ConnectThread::pinternal =nullptr;
 
 void ConnectThread::connected_callback()
 {
-    qDebug()<<"connected success";;
+    // qDebug()<<"connected success";;
+
     pinternal->SignalBleDebugInfo("connected success");
+    std::cout<<"connectd successfully"<<std::endl;
 
 }
 
@@ -64,6 +66,8 @@ void ConnectThread::disconnected_callback()
 
     qDebug()<<"disconnected!!";
     pinternal->SignalBleDebugInfo("disconnected");
+    std::cout<<"disconnected!!!"<<std::endl;
+
 
 }
 
@@ -98,10 +102,7 @@ payload:
         int loop=0;
 
         std::cout<< outdata <<std::endl;
-
-        int vol_value =0;
-
-            
+        int vol_value =0;           
       
         for( char v : payload)
         {
@@ -109,15 +110,14 @@ payload:
             loop++;
         }
 
-
        std::cout<<"vol: " << vol_value<<" mV" <<std::endl;
-       std::cout<<"vol: " << (float)vol_value/100.0f<<" mV" <<std::endl;
+       std::cout<<"vol: " << (float)vol_value/1000.0f<<" mV" <<std::endl;
 
-        printf("%08x\r\n", vol_value);
+       printf("%08x\r\n", vol_value);
 
-    //    pinternal->SignalBleMeasNotify(cgmslist);   
+    // pinternal->SignalBleMeasNotify(cgmslist);   
 
-        pinternal->SignalMeasureData((float)vol_value/100.0f);  
+       pinternal->SignalMeasureData((float)vol_value/1000.0f);  
 
 }
 
@@ -179,10 +179,7 @@ void ConnectThread::cgms_register_callback()
       catch(const std::exception& e)
       {
         std::cerr << e.what() << '\n';
-      }
-      
-
-    
+      }   
 
     // peripheral_connected.notify(CGSM_SERVICE_UUID,CGMS_STATUS_CHAR_UUID,status_callback);
 
@@ -238,7 +235,6 @@ void ConnectThread::cgms_start_session(void)
 {
         // time_t sec= time(nullptr);
         // tm  *tm_local = localtime( &sec);
-
 
         // qDebug()<<"Datetime:"<<tm_local->tm_year<<tm_local->tm_mon<<tm_local->tm_mday;
 
@@ -446,26 +442,34 @@ time_t ConnectThread::cgms_get_start_time(void)
     return 0;
 }
 
+void ConnectThread::cgms_test(void)
+{
+
+
+    std::cout<<" conect thread point" <<std::endl;
+
+}
 void ConnectThread::run()
 {
-        uint8_t run_step=0;
+        // uint8_t run_step=0;
         isConnected = true;
         isruning = true;
 
-        // std::cout<<"runing "<<std::endl;
+        std::cout<<"runing "<<std::endl;
 
+
+        std::cout<<( "connect name:"+peripheral_connected.identifier()+
+                  " addr:" + peripheral_connected.address())<<std::endl;
 
         // // SignalBleDebugInfo( "connect name:"+peripheral_connected.identifier()+
         // //          " addr:" + peripheral_connected.address());
          try
         {
-                 peripheral_connected.set_callback_on_connected(connected_callback);
+           // peripheral_connected.set_callback_on_connected(connected_callback);
 
-                peripheral_connected.set_callback_on_disconnected(disconnected_callback);
-
-       
-            /* code */
-                peripheral_connected.connect();
+           // peripheral_connected.set_callback_on_disconnected(disconnected_callback);       
+                /* code */
+            peripheral_connected.connect();
         }
         catch(const std::exception& e)
         {
@@ -473,7 +477,7 @@ void ConnectThread::run()
         }
         
         
-        // //Can't find filter element
+        // // //Can't find filter element
         std::cout << "Successfully connected, listing services." << std::endl;
         for (auto service : peripheral_connected.services())
         {
@@ -510,7 +514,7 @@ void ConnectThread::run()
 
     // // /*********************************************************************/
                 
-                cgms_register_callback();
+        cgms_register_callback();
             
     //          if(cgms_get_feature())
     //          {
@@ -524,14 +528,13 @@ void ConnectThread::run()
     //             run_step =1;
     //          }     
          
-            while(isConnected && isruning)
+           while(isConnected && isruning)               
             {
                 //std::string abc;
                 //abc="loops=" ;
                 //emit SignalBleDebugInfo(abc);
                 //qDebug()<<"run()"<<QThread::currentThreadId();  
-
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                std::this_thread::sleep_for(std::chrono::milliseconds(500));
             }
 
             

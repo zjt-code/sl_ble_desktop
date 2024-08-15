@@ -13,6 +13,9 @@
     <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\connectthread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\mythread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\simpleble\src\Adapter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,6 +61,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\connectthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\mythread.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\QT_PROG\sl_ble_desktop\sl_ble_desktop\build\sl_ble_desktop_autogen\include_Debug\ui_mainwindow.h">

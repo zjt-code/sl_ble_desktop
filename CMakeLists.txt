@@ -29,6 +29,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt5 COMPONENTS Charts )
 
+add_library(OpenXLSX STATIC IMPORTED)
+set_property(TARGET OpenXLSX PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/OpenXLSX/OpenXLSXd.lib")
+
+
 # Configure common source files
 set(
     SRC_SIMPLEBLE_FILES
@@ -64,7 +68,8 @@ set(
                       ${CMAKE_CURRENT_SOURCE_DIR}/simpleble/src/backends/windows
                       ${CMAKE_CURRENT_SOURCE_DIR}/simpleble/src/external
                       ${CMAKE_CURRENT_SOURCE_DIR}/simpleble/src/builders
-                      ${CMAKE_CURRENT_SOURCE_DIR}/simpleble/src)
+                      ${CMAKE_CURRENT_SOURCE_DIR}/simpleble/src
+                      ${CMAKE_CURRENT_SOURCE_DIR}/OpenXLSX)
 
 # set(TS_FILES sl_ble_desktop_zh_CN.ts)
 
@@ -84,12 +89,14 @@ else()
     mainwindow.ui
     connectthread.cpp
     connectthread.h
+    mythread.cpp
+    mythread.hpp
     # ${TS_FILES}
     ${SRC_SIMPLEBLE_FILES}
   )
 endif()
 
-target_link_libraries(sl_ble_desktop PRIVATE Qt5::Widgets Qt5::Charts)
+target_link_libraries(sl_ble_desktop  PRIVATE Qt5::Widgets Qt5::Charts OpenXLSX)
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
@@ -102,4 +109,5 @@ include_directories(simpleble/src/external)
 include_directories(simpleble/src/builders)
 include_directories(simpleble/src/windows)
 include_directories(simpleble/src)
+include_directories(OpenXLSX)
 

@@ -41,7 +41,6 @@ public:
      
      time_t tm_session_start;    // UTC timestample
 
-
      SimpleBLE::Peripheral peripheral_connected;
 
      //void(*pMeasCallback)(SimpleBLE::ByteArray& payload);
@@ -73,6 +72,7 @@ public:
      void cgms_update_key(void);
      void cgms_verify_pwd(void);
      void cgms_set_calibration(int g);
+     void cgms_test(void);
      
 
      static uint8_t cgms_meas_parse(uint8_t *data,T_CGMS_DATA &cgms_data);

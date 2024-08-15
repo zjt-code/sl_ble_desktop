@@ -71,6 +71,10 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "qtcharts": "cpp",
+        "any": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp"
     }
 }
